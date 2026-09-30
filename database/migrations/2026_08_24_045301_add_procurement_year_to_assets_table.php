@@ -9,7 +9,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('assets', function (Blueprint $table) {
-            $table->year('procurement_year')->nullable()->after('purchace_price');
+            $table->year('procurement_year')->nullable()->after('purchase_price');
         });
     }
 

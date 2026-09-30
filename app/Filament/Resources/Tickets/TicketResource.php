@@ -28,9 +28,9 @@ class TicketResource extends Resource
     /** @var User|null $user */
     $user = Auth::user();
 
-    if ($user?->hasAnyRole(['super_admin', 'staff'])) {
-        return $query;
-    }
+    if ($user?->hasAnyRole(['admin', 'staff', 'super_admin'])) {
+    return $query;
+}
 
     return $query->where('user_id', $user?->id);
 }
